@@ -1,0 +1,26 @@
+# dependencies
+next
+react
+react-dom
+lucide-react
+recharts
+clsx
+tailwind-merge
+framer-motion
+
+# server / kafka
+ws
+kafkajs
+
+# types
+typescript
+@types/node
+@types/react
+@types/react-dom
+@types/ws
+
+# build / dev
+ts-node
+postcss
+tailwindcss
+autoprefixer
