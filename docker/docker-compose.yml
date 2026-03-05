@@ -1,0 +1,22 @@
+services:
+  dashboard:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: econ-dashboard
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=development
+      - PORT=3001
+      - NEXT_PUBLIC_ML_API_URL=http://ml-platform:8000
+      - NEXT_PUBLIC_PG_API_URL=http://localhost:3001
+      - NEXT_PUBLIC_WS_URL=ws://localhost:3001/ws/releases
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - USE_KAFKA=false
+    restart: always
+
+networks:
+  default:
+    name: econ-network
+    external: true
